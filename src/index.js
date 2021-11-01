@@ -1,12 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
+import Books from './components/books';
+import Categories from './components/categories';
 import reportWebVitals from './reportWebVitals';
+
+const testData = [
+  {
+    id: 1,
+    title: 'The Lord of the Rings',
+  },
+  {
+    id: 2,
+    title: 'The Hobbit',
+  },
+];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Link to="/">Books</Link>
+      <Link to="/categories">Categories</Link>
+      <Switch>
+        <Route path="/">
+          <Books books={testData} />
+        </Route>
+        <Route path="/categories">
+          <Categories />
+        </Route>
+      </Switch>
+    </Router>
+
   </React.StrictMode>,
   document.getElementById('root'),
 );
