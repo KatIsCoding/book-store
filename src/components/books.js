@@ -6,6 +6,11 @@ export default function Books(props) {
   return (
     <div>
       <h1>Books</h1>
+      <form>
+        <input type="text" placeholder="Book Title" />
+        <input type="text" placeholder="Author" />
+        <button type="submit">Add Book</button>
+      </form>
       <ul>
         {books.map((book) => (
           <li key={book.id}>
