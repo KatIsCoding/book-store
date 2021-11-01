@@ -28,10 +28,10 @@ ReactDOM.render(
       <Link to="/">Books</Link>
       <Link to="/categories">Categories</Link>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Books books={testData} />
         </Route>
-        <Route path="/categories">
+        <Route exact path="/categories">
           <Categories />
         </Route>
       </Switch>
