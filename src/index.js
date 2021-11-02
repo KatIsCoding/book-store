@@ -7,35 +7,28 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Books from './components/books';
 import Categories from './components/categories';
 import reportWebVitals from './reportWebVitals';
-
-const testData = [
-  {
-    id: 1,
-    title: 'The Lord of the Rings',
-  },
-  {
-    id: 2,
-    title: 'The Hobbit',
-  },
-];
+import store from './redux/configureStore';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Link to="/">Books</Link>
-      <Link to="/categories">Categories</Link>
-      <Switch>
-        <Route exact path="/">
-          <Books books={testData} />
-        </Route>
-        <Route exact path="/categories">
-          <Categories />
-        </Route>
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Link to="/">Books</Link>
+        <Link to="/categories">Categories</Link>
+        <Switch>
+          <Route exact path="/">
+            <Books />
+          </Route>
+          <Route exact path="/categories">
+            <Categories />
+          </Route>
+        </Switch>
+      </Router>
+    </Provider>
 
   </React.StrictMode>,
   document.getElementById('root'),
