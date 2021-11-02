@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBook } from '../../redux/books/books';
 
 export default function AddNewBookComponent() {
   const dispatch = useDispatch();
