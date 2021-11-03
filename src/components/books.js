@@ -1,22 +1,20 @@
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import AddNewBookComponent from './booksComponents/addBook';
+import RemoveBook from './booksComponents/removeBook';
 
-export default function Books(props) {
-  const { books, onBookDelete } = props;
+function Books() {
+  const books = useSelector((state) => state.books);
 
   return (
     <div>
       <h1>Books</h1>
-      <form>
-        <input type="text" placeholder="Book Title" />
-        <input type="text" placeholder="Author" />
-        <button type="submit">Add Book</button>
-      </form>
+      <AddNewBookComponent />
       <ul>
         {books.map((book) => (
           <li key={book.id}>
             {book.title}
             {' '}
-            <button onClick={onBookDelete} type="button">Delete</button>
+            <RemoveBook bookID={book.id} />
           </li>
         ))}
       </ul>
@@ -24,10 +22,4 @@ export default function Books(props) {
   );
 }
 
-Books.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-  })).isRequired,
-  onBookDelete: PropTypes.func.isRequired,
-};
+export default Books;
