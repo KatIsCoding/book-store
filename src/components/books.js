@@ -1,9 +1,15 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import AddNewBookComponent from './booksComponents/addBook';
 import RemoveBook from './booksComponents/removeBook';
+import { loadInitialBooks } from '../redux/books/books';
 
 function Books() {
   const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadInitialBooks());
+  }, []);
 
   return (
     <div>
