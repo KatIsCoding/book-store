@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addBook } from '../../redux/books/books';
+import { postNewBook } from '../../redux/books/books';
 
 export default function AddNewBookComponent() {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ export default function AddNewBookComponent() {
     const id = Date.now();
     e.target.elements.bookTitle.value = '';
     e.target.elements.bookAuthor.value = '';
-    dispatch(addBook({ title: bookTitle, author: bookAuthor, id }));
+    dispatch(postNewBook({ title: bookTitle, author: bookAuthor, id }));
   };
 
   return (
