@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Slab:wght@200;300;500&family=Source+Serif+Pro&display=swap');
+
 .bookEntry {
   display: flex;
   flex-direction: row;
@@ -44,10 +46,48 @@
   justify-content: center;
 }
 
+.progressDetails h6{
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  color: #0f0e0e80;
+}
+
+.progressDetails h5{
+  font-family: 'Roboto Slab', serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.bookCategory {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #0f0e0e80;
+}
+
+.bookTitle {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+  color: #121212;
+}
+
 .textualProgress {
   text-align: left;
 }
 
 .textualProgress h5{
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #121212;
+}
+
+.textualProgress h6{
+  font-family: 'Montserrat', sans-serif;
+  color: #0f0e0e80;
+}
+
+.bookAuthor {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 200;
+  color: #4386bf;
 }
