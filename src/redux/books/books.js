@@ -1,8 +1,10 @@
+import BooksAPI from './api';
+
+const BooksObj = new BooksAPI();
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
-const initState = [];
 
-export const addBook = (payload) => ({
+const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,
 });
@@ -12,7 +14,40 @@ export const removeBook = (payload) => ({
   payload,
 });
 
-const reducer = (state = initState, action) => {
+export const deleteBook = (id) => (dispatch) => {
+  BooksObj.deleteBook(id).then((response) => {
+    if (response.ok) {
+      dispatch(removeBook(id));
+    }
+  });
+};
+
+export const postNewBook = (book) => (dispatch) => {
+  const requestBook = {
+    item_id: book.id,
+    title: book.title,
+    category: 'None',
+  };
+  BooksObj.postNew(requestBook).then((response) => {
+    if (response.ok) {
+      dispatch(addBook(book));
+    }
+  });
+};
+
+export const loadInitialBooks = () => (dispatch) => {
+  BooksObj.getAll().then((books) => {
+    Object.keys(books).forEach((bookID) => {
+      const book = {};
+      book.id = bookID;
+      book.title = books[bookID][0].title;
+      book.author = books[bookID][0].category;
+      dispatch(addBook(book));
+    });
+  });
+};
+
+const reducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, action.payload];
