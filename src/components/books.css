@@ -1,0 +1,39 @@
+.bookEntry {
+  display: flex;
+  flex-direction: row;
+  min-width: 80%;
+  border: 1px solid rgba(0,0,0,.125) !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: space-around;
+}
+
+.bookProgress {
+  width: 80px;
+  height: 80px;
+  justify-self: end;
+  justify-content: end;
+  justify-items: end;
+  align-self: center;
+}
+
+.progressInformation {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.secondInformation {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+.booksWrapper {
+  align-items: center;
+}
