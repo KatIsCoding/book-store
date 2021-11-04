@@ -26,7 +26,7 @@ export const postNewBook = (book) => (dispatch) => {
   const requestBook = {
     item_id: book.id,
     title: `${book.title}|${book.author}`,
-    category: 'None',
+    category: book.category,
   };
   BooksObj.postNew(requestBook).then((response) => {
     if (response.ok) {
