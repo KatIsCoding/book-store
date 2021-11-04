@@ -37,3 +37,17 @@
 .booksWrapper {
   align-items: center;
 }
+
+.progressDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.textualProgress {
+  text-align: left;
+}
+
+.textualProgress h5{
+  margin: 0;
+}

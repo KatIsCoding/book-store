@@ -23,6 +23,8 @@ function BookComponent(props) {
         <h6 className="bookAuthor">{author}</h6>
         <div className="buttons-handler">
           <RemoveBook id={id} />
+          <button type="button" className="btn btn-link">Comments</button>
+          <button type="button" className="btn btn-link">Edit</button>
         </div>
 
       </div>
@@ -30,7 +32,10 @@ function BookComponent(props) {
         <div className="bookProgress">
           <CircularProgressbar value="69" />
         </div>
-        <h5>69%</h5>
+        <div className="textualProgress">
+          <h5>69%</h5>
+          <h7>Completed</h7>
+        </div>
       </div>
       <div className="separator">
         <hr style={{ height: 100, width: 2 }} />
@@ -64,7 +69,6 @@ function Books() {
 
   return (
     <div>
-      <h1>Books</h1>
       <ListGroup className="booksWrapper">
         {books.map((book) => (
           <BookComponent
