@@ -22,7 +22,7 @@ function BookComponent(props) {
         <h3 className="bookTitle">{title}</h3>
         <h6 className="bookAuthor">{author}</h6>
         <div className="buttons-handler">
-          <RemoveBook id={id} />
+          <RemoveBook bookID={id} />
           <button type="button" className="btn btn-link">Comments</button>
           <button type="button" className="btn btn-link">Edit</button>
         </div>
@@ -34,7 +34,7 @@ function BookComponent(props) {
         </div>
         <div className="textualProgress">
           <h5>69%</h5>
-          <h7>Completed</h7>
+          <h6>Completed</h6>
         </div>
       </div>
       <div className="separator">
@@ -42,8 +42,8 @@ function BookComponent(props) {
       </div>
       <div className="progressDetails">
         <h6>CURRENT CHAPTER</h6>
-        <h6>CHAPTER 1</h6>
-        <button type="button" className="btn btn-primary">UPDATE PROGRESS</button>
+        <h5>Chapter 1</h5>
+        <button type="button" className="btn btn-primary">Update Progress</button>
       </div>
 
     </ListGroup.Item>
