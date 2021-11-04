@@ -26,7 +26,7 @@ ReactDOM.render(
       <Router>
         <Navbar bg="light" expand="lg">
 
-          <Navbar.Brand>Cool Books</Navbar.Brand>
+          <Navbar.Brand className="NavTitle">BookStore CMS</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="container-fluid">
