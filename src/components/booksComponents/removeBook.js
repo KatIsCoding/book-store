@@ -17,5 +17,5 @@ export default function RemoveBook({ bookID }) {
 }
 
 RemoveBook.propTypes = {
-  bookID: PropTypes.number.isRequired,
+  bookID: PropTypes.string.isRequired,
 };
