@@ -37,7 +37,6 @@ export const postNewBook = (book) => (dispatch) => {
 
 export const loadInitialBooks = () => (dispatch) => {
   BooksObj.getAll().then((books) => {
-    console.log(books);
     Object.keys(books).forEach((bookID) => {
       const book = {};
       const [bookTitle, bookAuthor] = books[bookID][0].title.split('|');
