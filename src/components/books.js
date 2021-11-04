@@ -4,17 +4,20 @@ import AddNewBookComponent from './booksComponents/addBook';
 import RemoveBook from './booksComponents/removeBook';
 import { loadInitialBooks } from '../redux/books/books';
 
+let loaded = false;
 function Books() {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(loadInitialBooks());
+    if (!loaded) {
+      dispatch(loadInitialBooks());
+      loaded = true;
+    }
   }, []);
 
   return (
     <div>
       <h1>Books</h1>
-      <AddNewBookComponent />
       <ul>
         {books.map((book) => (
           <li key={book.id}>
@@ -24,6 +27,7 @@ function Books() {
           </li>
         ))}
       </ul>
+      <AddNewBookComponent />
     </div>
   );
 }
