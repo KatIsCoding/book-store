@@ -10,12 +10,12 @@ export default function RemoveBook({ bookID }) {
   };
 
   return (
-    <button type="button" className="btn btn-danger" onClick={handleRemove}>
+    <button type="button" className="btn btn-link" onClick={handleRemove}>
       Remove
     </button>
   );
 }
 
 RemoveBook.propTypes = {
-  bookID: PropTypes.number.isRequired,
+  bookID: PropTypes.string.isRequired,
 };

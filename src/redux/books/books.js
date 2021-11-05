@@ -25,8 +25,8 @@ export const deleteBook = (id) => (dispatch) => {
 export const postNewBook = (book) => (dispatch) => {
   const requestBook = {
     item_id: book.id,
-    title: book.title,
-    category: 'None',
+    title: `${book.title}|${book.author}`,
+    category: book.category,
   };
   BooksObj.postNew(requestBook).then((response) => {
     if (response.ok) {
@@ -39,9 +39,11 @@ export const loadInitialBooks = () => (dispatch) => {
   BooksObj.getAll().then((books) => {
     Object.keys(books).forEach((bookID) => {
       const book = {};
+      const [bookTitle, bookAuthor] = books[bookID][0].title.split('|');
       book.id = bookID;
-      book.title = books[bookID][0].title;
-      book.author = books[bookID][0].category;
+      book.title = bookTitle;
+      book.author = bookAuthor;
+      book.category = books[bookID][0].category;
       dispatch(addBook(book));
     });
   });
