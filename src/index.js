@@ -21,6 +21,8 @@ import store from './redux/configureStore';
 ReactDOM.render(
   <React.StrictMode>
 
+    <meta name="image" property="og:image" content="https://github.com/microverseinc/curriculum-react-redux/raw/main/bookstore/images/bookstore.png" />
+    <meta name="author" content="Fabrizio Gomez" />
     <Provider store={store}>
 
       <Router>
